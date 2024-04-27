@@ -1,0 +1,19 @@
+{
+	"extends": "../tsconfig.base.json",
+	"compilerOptions": {
+		"outDir": "../dist",
+		"rootDir": ".",
+		"baseUrl": ".",
+		"paths": {
+			"#utils/*": ["lib/util/*"],
+			"#lib/*": ["lib/*"],
+			"#api/*": ["api/*"],
+			"#root/*": ["*"]
+		},
+		"module": "NodeNext",
+		"composite": true,
+		"ignoreDeprecations": "5.0"
+	},
+	"include": [".", "./**/*.json"],
+	"exclude": ["./tsconfig.json", "node_modules"]
+}

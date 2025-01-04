@@ -8,6 +8,8 @@ import type { Message } from 'discord.js';
 })
 export class UserCommand extends Command {
 	public override async messageRun(message: Message) {
-		return message.reply(`The prefix of the bot its \`;\`\nRemember you can use the commands with a mention, example:\`@Pyracchi ping\``);
+		return message.reply(
+			`The prefix of the bot its \`;\`\nRemember you can use the commands with a mention, example:\`@${message.client.user.username} ping\``
+		);
 	}
 }

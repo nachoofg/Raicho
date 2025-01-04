@@ -8,7 +8,7 @@ const client = new RaiClient();
 const main = async () => {
 	try {
 		console.clear();
-		await client.login();
+		await client.login(process.env.DISCORD_TOKEN);
 	} catch (error) {
 		container.logger.error(error);
 		client.destroy();

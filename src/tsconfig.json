@@ -5,15 +5,30 @@
 		"rootDir": ".",
 		"baseUrl": ".",
 		"paths": {
-			"#utils/*": ["lib/util/*"],
-			"#lib/*": ["lib/*"],
-			"#api/*": ["api/*"],
-			"#root/*": ["*"]
+			"#utils/*": [
+				"lib/util/*"
+			],
+			"#lib/*": [
+				"lib/*"
+			],
+			"#api/*": [
+				"api/*"
+			],
+			"#root/*": [
+				"*"
+			]
 		},
+		"verbatimModuleSyntax": true,
 		"module": "NodeNext",
 		"composite": true,
-		"ignoreDeprecations": "5.0"
+		"ignoreDeprecations": "5.0",
 	},
-	"include": [".", "./**/*.json"],
-	"exclude": ["./tsconfig.json", "node_modules"]
+	"include": [
+		".",
+		"./**/*.json"
+	],
+	"exclude": [
+		"./tsconfig.json",
+		"node_modules"
+	]
 }

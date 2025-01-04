@@ -1,6 +1,6 @@
 import { ApplyOptions } from '@sapphire/decorators';
 import { Args, Command } from '@sapphire/framework';
-import { EmbedBuilder, type Message } from 'discord.js';
+import { EmbedBuilder, TextChannel, type Message } from 'discord.js';
 import type { RaiCommandOptions } from '#root/typings/index.js';
 import type RaiCommandExtends from '#root/extensions/Command.js';
 
@@ -18,7 +18,7 @@ export class HelpCommand extends Command {
 		const commandStore = client.stores.get('commands');
 
 		if (!commandStore) {
-			return message.channel.send('⚠️ An error occurred while trying to get the commands.');
+			return (message.channel as TextChannel).send('⚠️ An error occurred while trying to get the commands.');
 		}
 
 		const embed = new EmbedBuilder()
@@ -44,7 +44,7 @@ export class HelpCommand extends Command {
 			const command = commandStore.get(arg.toLowerCase()) as RaiCommandExtends;
 
 			if (!command) {
-				return message.channel.send(`⚠️ The specified command \`${arg}\` does not exist.`);
+				return (message.channel as TextChannel).send(`⚠️ The specified command \`${arg}\` does not exist.`);
 			}
 
 			embed

@@ -1,5 +1,4 @@
 {
-	"extends": "@sapphire/ts-config/extra-strict",
 	"compilerOptions": {
 		"lib": ["ESNext", "DOM"],
 		"target": "ESNext",
